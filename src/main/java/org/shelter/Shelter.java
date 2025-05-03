@@ -30,6 +30,36 @@ public class Shelter <T extends Pet> {
 	}
 	
 	/**
+	 * Removes the Pet at the given position in the Shelter list.
+	 * @param index
+	 * @return
+	 */
+	public int removePetFromShelter (int index) {
+		if (index >= this.listOfPets.size() || index < 0) {
+			return 0;
+		}
+		this.listOfPets.remove(index);
+		return 1;
+	}
+	
+	/**
+	 * Returns the Pet at the given position in the Shelter list.
+	 * @param index
+	 * @return
+	 */
+	public T getPetFromShelter (int index) {
+		return this.listOfPets.get(index);
+	}
+	
+	/**
+	 * Returns the amount of Pets currently in the Shelter.
+	 * @return
+	 */
+	public int getShelterSize () {
+		return this.listOfPets.size();
+	}
+	
+	/**
 	 * Prints out the pets in the given Shelter.
 	 */
 	public void printPets () {
