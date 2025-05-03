@@ -52,12 +52,16 @@ public abstract class Pet {
 	public boolean isAdopted() {
 		return adopted;
 	}
-	public void setAdopted(boolean adopted) {
-		this.adopted = adopted;
+	public int updateAdoptionStatus(boolean adopted) {
+		if (this.adopted == false && adopted == true) {
+			this.adopted = adopted;
+			return 1;
+		}
+		return 0;
 	}
 	
 	public void printPet () {
-		System.out.println(this.getName() + " " + this.getId());
+		System.out.println("Name: " + this.getName() + "\nId: " + this.getId() + "\nType: " + this.getType() + "\nSpecies: " + this.getSpecies() + "\nAge: " + this.getAge() + "\nAdopt: " + this.isAdopted() + "\n");
 	}
 	
 }
