@@ -8,7 +8,15 @@ public class ExoticAnimal {
 	int age;
 	
 	
-	
+	/**
+	 * Takes in the id, name, category, sub species, and age of a new exotic animal and creates
+	 * an ExoticAnimal object from that.
+	 * @param id
+	 * @param name
+	 * @param category
+	 * @param subSpecies
+	 * @param age
+	 */
 	public ExoticAnimal(String id, String name, String category, String subSpecies, int age) {
 		super();
 		this.id = id;
