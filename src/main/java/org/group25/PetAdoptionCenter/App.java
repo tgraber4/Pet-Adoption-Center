@@ -1,7 +1,10 @@
 package org.group25.PetAdoptionCenter;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import org.pet.ExoticAnimal;
 import org.pet.ExoticAnimalAdapter;
@@ -57,5 +60,16 @@ public class App
 //        Petco.addPetToShelter(new ExoticAnimalAdapter(bob));
         
         Petco.printPets();
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
+        String timestamp = LocalDateTime.now().format(formatter);
+        String filename = timestamp + "_pets.json";
+        
+        try (FileWriter writer = new FileWriter("./src/main/resources/" + filename)) {
+            gson.toJson(Petco.getListOfPets(), writer);
+            System.out.println("JSON file created: person.json");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
