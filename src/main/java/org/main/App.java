@@ -1,4 +1,4 @@
-package org.group25.PetAdoptionCenter;
+package org.main;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -67,7 +67,6 @@ public class App
         
         try (FileWriter writer = new FileWriter("./src/main/resources/" + filename)) {
             gson.toJson(Petco.getListOfPets(), writer);
-            System.out.println("JSON file created: person.json");
         } catch (IOException e) {
             e.printStackTrace();
         }
