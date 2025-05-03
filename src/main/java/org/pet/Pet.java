@@ -1,6 +1,6 @@
 package org.pet;
 
-public abstract class Pet {
+public abstract class Pet implements Comparable<Pet> {
 	int id;
 	String name;
 	String type;
@@ -62,6 +62,11 @@ public abstract class Pet {
 	
 	public void printPet () {
 		System.out.println("Name: " + this.getName() + "\nId: " + this.getId() + "\nType: " + this.getType() + "\nSpecies: " + this.getSpecies() + "\nAge: " + this.getAge() + "\nAdopt: " + this.isAdopted() + "\n");
+	}
+	
+	@Override
+	public int compareTo(Pet other) {
+		return this.getName().compareTo(other.getName());
 	}
 	
 }
