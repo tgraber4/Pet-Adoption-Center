@@ -56,5 +56,8 @@ public abstract class Pet {
 		this.adopted = adopted;
 	}
 	
+	public void printPet () {
+		System.out.println(this.getName() + " " + this.getId());
+	}
 	
 }

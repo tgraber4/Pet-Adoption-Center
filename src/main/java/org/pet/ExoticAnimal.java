@@ -2,14 +2,14 @@ package org.pet;
 
 public class ExoticAnimal {
 	String id;
-	int name;
+	String name;
 	String category;
 	String subSpecies;
 	int age;
 	
 	
 	
-	public ExoticAnimal(String id, int name, String category, String subSpecies, int age) {
+	public ExoticAnimal(String id, String name, String category, String subSpecies, int age) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -23,10 +23,10 @@ public class ExoticAnimal {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public int getName() {
+	public String getName() {
 		return name;
 	}
-	public void setName(int name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	public String getCategory() {
