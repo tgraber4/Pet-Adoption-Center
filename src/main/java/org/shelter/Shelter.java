@@ -9,12 +9,25 @@ import org.pet.Pet;
 
 public class Shelter <T extends Pet> {
 	ArrayList<T> listOfPets = null;
+	private int maxId = 0;
+
 
 	/**
 	 * Creates a Shelter object.
 	 */
 	public Shelter() {
 		this.listOfPets = new ArrayList<T>();
+	}
+
+	public void updateMaxId() {
+	    for (Pet pet : listOfPets) {
+	        if (pet.getId() > maxId) {
+	            maxId = pet.getId();
+	        }
+	    }
+	}
+	public int getNextAvailableId() {
+	    return ++maxId;
 	}
 	
 	/**

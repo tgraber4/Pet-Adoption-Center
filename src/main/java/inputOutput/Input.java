@@ -30,13 +30,15 @@ public class Input {
 	        e.printStackTrace();
 	    }
 	    
+	    Petco.updateMaxId();
+	    
 	    try (FileReader reader = new FileReader("./src/main/resources/exotic_animals.json")) {
 	    	JsonArray animalArray = JsonParser.parseReader(reader).getAsJsonArray();
 	        for (int i = 0; i < animalArray.size(); i++) {
 	            JsonObject pet = animalArray.get(i).getAsJsonObject();
 	            
 	            ExoticAnimal newAnimal = new ExoticAnimal(pet.get("uniqueId").getAsString(), pet.get("animalName").getAsString(), pet.get("category").getAsString(), pet.get("subSpecies").getAsString(), pet.get("yearsOld").getAsInt());
-	            ExoticAnimalAdapter adapter = new ExoticAnimalAdapter(newAnimal);
+	            ExoticAnimalAdapter adapter = new ExoticAnimalAdapter(newAnimal, Petco);
 	            Petco.addPetToShelter(adapter);
 	        }
 	    } catch (IOException e) {

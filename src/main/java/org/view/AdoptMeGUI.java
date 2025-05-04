@@ -122,7 +122,8 @@ public class AdoptMeGUI extends JFrame {
 
     public void showPetDetails(Pet pet) {
         JOptionPane.showMessageDialog(this,
-            "Name: " + pet.getName() +
+        	"Id: " + pet.getId() +
+            "\nName: " + pet.getName() +
             "\nType: " + pet.getType() +
             "\nSpecies: " + pet.getSpecies() +
             "\nAge: " + pet.getAge() +
